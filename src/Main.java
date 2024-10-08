@@ -46,5 +46,13 @@ public class Main {
         for(int number : bigNumber.divideByDigit(bigNumber5, 2)){
             System.out.printf(number + " ");
         }
+
+        int[] keyboardPrices = {40, 35, 70, 15, 45};
+        int[] usbPrices = {20, 15, 30, 15};
+
+        ElectronicShop altex = new ElectronicShop(keyboardPrices, usbPrices);
+        System.out.println("\n" + altex.lowestKeyboardPrice());
+        System.out.println(altex.mostExpensiveProduct());
     }
+
 }

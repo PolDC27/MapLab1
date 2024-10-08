@@ -13,7 +13,7 @@ public class University {
         return badGrades;
     }
 
-    public double calculateAverageOf(int[] grades){
+    public double calculateAverage(int[] grades){
         double average = 0;
 
         for (int grade : grades) {
@@ -24,4 +24,23 @@ public class University {
         return average;
     }
 
+    public int[] round(int[] grades){
+        int[] roundedGrades = new int[grades.length];
+
+        for(int i = 0; i < roundedGrades.length; i++){
+            if(grades[i] < 38){
+              roundedGrades[i] = grades[i];
+            }
+            else{
+                if((grades[i] + 2) % 5 == 0){
+                    roundedGrades[i] = grades[i] + 2;
+                }
+                else if((grades[i] + 1) % 5 == 0){
+                        roundedGrades[i] = grades[i] + 1;
+                }else roundedGrades[i] = grades[i];
+            }
+
+        }
+        return roundedGrades;
+    }
 }

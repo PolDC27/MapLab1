@@ -32,4 +32,37 @@ public class ElectronicShop {
         else return sortAscending(this.usbPrices)[usbPrices.length - 1];
     }
 
+    public int mostExpensiveAffordableUSB(int budget){
+        int i = 0;
+        while(i < this.usbPrices.length && sortAscending(this.usbPrices)[i] <= budget)
+            i++;
+        return sortAscending(this.usbPrices)[i - 1];
+    }
+
+    public String mostExpensiveAffordableCart(int budget){
+        int max = 0;
+        int keyboardPrice = 0;
+        int usbPrice = 0;
+
+        for (int i = 0; i < usbPrices.length; i++){
+            for (int j = 0; j < keyboardsPrice.length; j++){
+                if (sortAscending(this.usbPrices)[i] + sortAscending(this.keyboardsPrice)[j] > budget){
+                    break;
+                }else{
+                    if ((sortAscending(this.usbPrices)[i] + sortAscending(this.keyboardsPrice)[j] > max)){
+                        max = sortAscending(this.usbPrices)[i] + sortAscending(this.keyboardsPrice)[j];
+                        usbPrice = sortAscending(this.usbPrices)[i];
+                        keyboardPrice = sortAscending(this.keyboardsPrice)[j];
+                    }
+                }
+            }
+        }
+        if (max == 0){
+            return "-1";
+        }
+        else {
+            return "Max: " + max + " = " + usbPrice + " + " + keyboardPrice;
+        }
+    }
+
 }

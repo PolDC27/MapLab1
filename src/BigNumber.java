@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BigNumber {
     public int[] add(int[] bigNumber1, int[] bigNumber2){
         int[] sum = new int[bigNumber1.length + 1];
@@ -78,9 +81,13 @@ public class BigNumber {
         return result;
     }
 
-    public int[] divideByDigit(int[] bigNumber, int digit) {
-        int[] result = new int[bigNumber.length + 1];
-
+    public List<Integer> divideByDigit(int[] bigNumber, int digit) {
+        List<Integer> result = new ArrayList<>();
+        int extra = 0;
+        for(int i = 0; i < bigNumber.length - 1; i++){
+                result.add((extra * 10 + bigNumber[i]) / digit);
+                extra = (extra * 10 + bigNumber[i]) % digit;
+            }
         return result;
     }
 }

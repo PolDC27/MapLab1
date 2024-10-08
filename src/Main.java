@@ -42,6 +42,9 @@ public class Main {
         for(int number : bigNumber.multiplyByDigit(bigNumber5, 2)){
             System.out.printf(number + " ");
         }
-
+        System.out.println(' ');
+        for(int number : bigNumber.divideByDigit(bigNumber5, 2)){
+            System.out.printf(number + " ");
+        }
     }
 }

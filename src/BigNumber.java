@@ -55,4 +55,32 @@ public class BigNumber {
     return result;
     }
 
+    public int[] multiplyByDigit(int[] bigNumber, int digit){
+        int[] result = new int[bigNumber.length + 1];
+        int extra = 0;
+
+        for(int i = bigNumber.length - 1; i >= 0; --i){
+            if((bigNumber[i] * digit + extra) > 9){
+                result[i] = (bigNumber[i] * digit + extra) % 10;
+                extra = ((bigNumber[i] * digit + extra) / 10) % 10;
+            }
+            else{
+                result[i] = (bigNumber[i] * digit + extra);
+                extra = 0;
+            }
+        }
+        if(extra != 0){
+            for(int i = result.length - 1; i > 0; --i){
+                result[i] = result[i-1];
+            }
+            result[0] = extra;
+        }
+        return result;
+    }
+
+    public int[] divideByDigit(int[] bigNumber, int digit) {
+        int[] result = new int[bigNumber.length + 1];
+
+        return result;
+    }
 }

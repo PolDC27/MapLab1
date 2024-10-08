@@ -23,5 +23,16 @@ public class Main {
         System.out.println(array.maximumSum());
         System.out.println(array.minimumSum());
 
+
+        int[] bigNumber1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] bigNumber2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+        BigNumber bigNumber = new BigNumber();
+
+        for(int number : bigNumber.add(bigNumber1, bigNumber2)){
+            System.out.printf(number + " ");
+        }
+
+
+
     }
 }

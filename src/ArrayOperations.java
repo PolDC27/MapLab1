@@ -29,4 +29,23 @@ public class ArrayOperations {
     public int findMin(){
         return sortAscending(this.array)[0];
     }
+
+    public int maximumSum(){
+        int sum = 0;
+
+        for(int i = 1; i < sortAscending(this.array).length; i++){
+           sum += sortAscending(this.array)[i];
+        }
+        return sum;
+    }
+
+    public int minimumSum(){
+        int sum = 0;
+
+        for(int i = 0; i < sortAscending(this.array).length - 1; i++){
+            sum += sortAscending(this.array)[i];
+        }
+        return sum;
+    }
 }
+

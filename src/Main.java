@@ -20,5 +20,8 @@ public class Main {
         ArrayOperations array = new ArrayOperations(arr);
         System.out.println(array.findMax());
         System.out.println(array.findMin());
+        System.out.println(array.maximumSum());
+        System.out.println(array.minimumSum());
+
     }
 }

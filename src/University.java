@@ -43,4 +43,15 @@ public class University {
         }
         return roundedGrades;
     }
+
+    public int maximumRoundedGrade(int[] grades){
+        int max = -1;
+
+        for(int grade : this.round(grades)){
+           if(grade > max){
+             max = grade;
+           }
+        }
+        return max;
+    }
 }

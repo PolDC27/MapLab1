@@ -13,5 +13,7 @@ public class Main {
         for(int grade : universitate.round(arr)){
             System.out.println(grade);
         }
+
+        System.out.println(universitate.maximumRoundedGrade(arr));
     }
 }

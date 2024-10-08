@@ -13,7 +13,7 @@ public class University {
         return badGrades;
     }
 
-    public double calculateAverage(int[] grades){
+    public String calculateAverage(int[] grades){
         double average = 0;
 
         for (int grade : grades) {
@@ -21,7 +21,7 @@ public class University {
         }
         average /= grades.length;
 
-        return average;
+        return String.format("%.2f", average);
     }
 
     public int[] round(int[] grades){

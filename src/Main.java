@@ -3,17 +3,22 @@
 public class Main {
     public static void main(String[] args) {
         University universitate = new University();
-        int[] arr = {50, 20, 100, 60, 10, 38, 86, 98, 99, 94};
+        int[] arr = {50, 81, 100, 60, 10, 38, 86, 98, 99, 94};
 
         for(int i = 0; i < universitate.filterBadGrades(arr).length; i++)
             System.out.println(universitate.filterBadGrades(arr)[i] + " ");
 
-        System.out.println(universitate.calculateAverage(arr));
+        System.out.println( universitate.calculateAverage(arr));
 
         for(int grade : universitate.round(arr)){
             System.out.println(grade);
         }
 
         System.out.println(universitate.maximumRoundedGrade(arr));
+
+
+        ArrayOperations array = new ArrayOperations(arr);
+        System.out.println(array.findMax());
+        System.out.println(array.findMin());
     }
 }
